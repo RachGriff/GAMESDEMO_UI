@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 import {
   detailsRequested,
   submitDelete,
-  submitEdit
+  submitEdit,
+  detailsError
 } from "../../actions/gameDetails";
 
 function mapStateToProps(state) {
@@ -21,9 +22,12 @@ function mapDispatchToProps(dispatch) {
     onDeleteSubmitted: id => {
       dispatch(submitDelete(id));
     },
-    onEditSubmitted: (history, id) => submitEdit(history, id)
+    onEditSubmitted: (history, id) => submitEdit(history, id),
+
+    onDetailsError: history => detailsError(history)
   };
 }
+
 export default withRouter(
   connect(
     mapStateToProps,

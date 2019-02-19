@@ -1,6 +1,7 @@
 export const GAME_DETAILS_REQUESTED = "GAME_DETAILS_REQUESTED";
 export const GAME_DETAILS_SUCCESS = "GAME_DETAILS_SUCCESS";
 export const DELETE_GAME_SUBMITTED = "DELETE_GAME_SUBMITTED";
+export const GAME_DETAILS_ERROR = "GAME_DETAILS_ERROR";
 
 export const detailsRequested = id => ({
   type: GAME_DETAILS_REQUESTED,
@@ -20,3 +21,5 @@ export const submitDelete = id => ({
 export const submitEdit = (history, id) => {
   history.push(`/gameDetails/${id}/edit`);
 };
+
+export const detailsError = history => history.push("/");

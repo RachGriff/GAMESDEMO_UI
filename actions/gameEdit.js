@@ -4,7 +4,11 @@ export const CHANGED_NAME = "CHANGED_NAME";
 export const CHANGED_DESCRIPTION = "CHANGED_DESCRIPTION";
 export const CHANGED_RELEASED = "CHANGED_RELEASED";
 export const CHANGED_RATING = "CHANGED_RATING";
+export const EDIT_FAILED = "EDIT_FAILED";
 
+export const editFailed = () => ({
+  type: EDIT_FAILED
+});
 export const editSubmitted = game => ({
   type: EDIT_GAME_DETAILS,
   game

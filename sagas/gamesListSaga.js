@@ -1,32 +1,11 @@
 import axios from "axios";
 import { put, takeLatest, call } from "redux-saga/effects";
 import { LIST_REQUESTED, listSuccess } from "../actions/gamesList";
+import { API_BASE_URL } from "../utils/config";
 
 function* getGames() {
-  const gamesArray = [
-    {
-      id: "1",
-      name: "SuperDuperGame",
-      description: "An action packed game!",
-      released: "July 2008",
-      rating: 1
-    },
-    {
-      id: "2",
-      name: "NextCoolGame",
-      description: "Fantastic in game graphics.",
-      released: "March 2017",
-      rating: 2
-    },
-    {
-      id: "3",
-      name: "myBestGame",
-      description: "An epic journey through a new world!",
-      released: "May 2012",
-      rating: 3
-    }
-  ];
-  yield put(listSuccess(gamesArray));
+  const games = yield call(axios.get, API_BASE_URL);
+  yield put(listSuccess(games.data));
 }
 
 export default function*() {

@@ -1,6 +1,7 @@
 import {
   GAME_DETAILS_REQUESTED,
-  GAME_DETAILS_SUCCESS
+  GAME_DETAILS_SUCCESS,
+  GAME_DETAILS_ERROR
 } from "../actions/gameDetails";
 
 import {
@@ -9,12 +10,14 @@ import {
   CHANGED_RELEASED,
   CHANGED_RATING,
   EDIT_GAME_DETAILS,
-  EDIT_GAME_SUCCESS
+  EDIT_GAME_SUCCESS,
+  EDIT_FAILED
 } from "../actions/gameEdit";
 
 const initialState = {
   isLoading: false,
-  game: {}
+  game: {},
+  editError: false
 };
 
 export default (state, action) => {
@@ -33,27 +36,37 @@ export default (state, action) => {
       return {
         ...state,
         game: action.result,
-        isLoading: false
+        isLoading: false,
+        editError: false
       };
     case EDIT_GAME_SUCCESS:
       return {
         ...state,
-        game: action.game
+        game: action.game,
+        editError: false
       };
     case CHANGED_NAME:
       return {
         ...state,
-        game: Object.assign({}, state.game, { name: action.value })
+        game: Object.assign({}, state.game, { name: action.value }),
+        editError: action.value === ""
       };
     case CHANGED_DESCRIPTION:
       return {
         ...state,
-        game: Object.assign({}, state.game, { description: action.value })
+        game: Object.assign({}, state.game, { description: action.value }),
+        editError: action.value === ""
       };
     case CHANGED_RATING:
       return {
         ...state,
-        game: Object.assign({}, state.game, { rating: action.value })
+        game: Object.assign({}, state.game, { rating: action.value }),
+        editError: action.value === ""
+      };
+    case EDIT_FAILED:
+      return {
+        ...state,
+        editError: true
       };
     default:
       return state;

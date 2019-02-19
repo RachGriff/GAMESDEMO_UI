@@ -6,12 +6,14 @@ import {
   changingDescription,
   changingReleased,
   changingRating,
-  editSubmitted
+  editSubmitted,
+  editFailed
 } from "../../actions/gameEdit";
 
 function mapStateToProps(state) {
   return {
-    game: state.gameDetails.game
+    game: state.gameDetails.game,
+    editError: state.gameDetails.editError
   };
 }
 

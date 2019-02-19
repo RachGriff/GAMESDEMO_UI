@@ -12,7 +12,8 @@ export default class GameEditForm extends React.Component {
       onChangeDescription,
       onChangeReleased,
       onChangeRating,
-      onEditingGame
+      onEditingGame,
+      editError
     } = this.props;
     return (
       <div>
@@ -24,7 +25,12 @@ export default class GameEditForm extends React.Component {
           onChangeReleased={onChangeReleased}
           onChangeRating={onChangeRating}
         />
-        <button className="btn" onClick={() => onEditingGame(game)}>
+        {editError && <div>Please enter all mandatory fields.</div>}
+        <button
+          className="btn"
+          onClick={() => onEditingGame(game)}
+          disabled={editError}
+        >
           Update
         </button>
         <button className="btn" onClick={() => onCancel(history)}>

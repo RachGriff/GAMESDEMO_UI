@@ -1,16 +1,20 @@
 import axios from "axios";
 import { put, takeLatest, call } from "redux-saga/effects";
-import { GAME_DETAILS_REQUESTED, detailsSuccess } from "../actions/gameDetails";
+import {
+  GAME_DETAILS_REQUESTED,
+  detailsSuccess,
+  detailsError
+} from "../actions/gameDetails";
+import { push } from "connected-react-router";
+import { API_BASE_URL } from "../utils/config";
 
 function* getGameDetails(action) {
-  const game = {
-    id: action.id,
-    name: "myBestGame",
-    description: "An epic journey through a new world!",
-    released: "May 2012",
-    rating: 3
-  };
-  yield put(detailsSuccess(game));
+  try {
+    const game = yield call(axios.get, `${API_BASE_URL}/${action.id}`);
+    yield put(detailsSuccess(game.data));
+  } catch (error) {
+    yield put(push("/"));
+  }
 }
 
 export default function*() {
