@@ -1,0 +1,12 @@
+body {
+  font-family: "Roboto Condensed";
+}
+
+table th {
+  width: 200px;
+  border-bottom: 2px solid gray;
+}
+
+td {
+  text-align: center;
+}
