@@ -9,3 +9,5 @@ export const listSuccess = results => ({
   type: LIST_SUCCESS,
   results: results
 });
+
+export const addGame = history => history.push(`/addGame`);

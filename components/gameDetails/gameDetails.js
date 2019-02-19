@@ -13,14 +13,14 @@ export default class GameDetails extends React.Component {
         <div>GameDetails for {game.name}</div>
         <SingleGameDetail game={game} />
         <button
-          className="Editbtn"
+          className="btn"
           value="Edit Game"
           onClick={() => onEditSubmitted(history, game.id)}
         >
           Edit Game
         </button>
         <button
-          className="Deletebtn"
+          className="btn"
           value="Delete Game"
           onClick={() => {
             onDeleteSubmitted(game.id);

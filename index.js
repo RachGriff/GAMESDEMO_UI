@@ -3,6 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/app";
 import GameDetails from "./components/gameDetails/gameDetailsContainer";
+import AddGame from "./components/addGame/addGameContainer";
 import EditGameDetails from "./components/gameEdit/gameEditContainer";
 import createSagaMiddleware from "redux-saga";
 import { createBrowserHistory } from "history";
@@ -29,6 +30,7 @@ ReactDOM.render(
     <ConnectedRouter history={history}>
       <Switch>
         <Route exact path="/" component={App} />
+        <Route exact path="/addGame" component={AddGame} />
         <Route exact path="/gameDetails/:id" component={GameDetails} />
         <Route exact path="/gameDetails/:id/edit" component={EditGameDetails} />
       </Switch>

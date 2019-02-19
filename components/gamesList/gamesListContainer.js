@@ -1,7 +1,8 @@
 import React from "react";
 import GamesList from "./gamesList";
 import { connect } from "react-redux";
-import { requestList } from "../../actions/gamesList";
+import { requestList, addGame } from "../../actions/gamesList";
+import { withRouter } from "react-router";
 
 function mapStateToProps(state) {
   return {
@@ -14,11 +15,13 @@ function mapDispatchToProps(dispatch) {
   return {
     onLoad: () => {
       dispatch(requestList());
-    }
+    },
+    onAdd: history => addGame(history)
   };
 }
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(GamesList);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(GamesList)
+);

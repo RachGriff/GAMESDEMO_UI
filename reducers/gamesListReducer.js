@@ -2,7 +2,8 @@ import { LIST_REQUESTED, LIST_SUCCESS } from "../actions/gamesList";
 
 const initialState = {
   isLoading: false,
-  gamesList: []
+  gamesList: [],
+  path: "/"
 };
 
 export default (state, action) => {
