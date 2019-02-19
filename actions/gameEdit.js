@@ -29,9 +29,9 @@ export const changingDescription = value => ({
   type: CHANGED_DESCRIPTION,
   value
 });
-export const changingReleased = value => ({
+export const changingReleased = date => ({
   type: CHANGED_RELEASED,
-  value
+  date
 });
 export const changingRating = value => ({
   type: CHANGED_RATING,

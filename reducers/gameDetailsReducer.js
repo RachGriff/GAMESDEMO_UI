@@ -14,6 +14,8 @@ import {
   EDIT_FAILED
 } from "../actions/gameEdit";
 
+import moment from "moment";
+
 const initialState = {
   isLoading: false,
   game: {},
@@ -56,6 +58,13 @@ export default (state, action) => {
         ...state,
         game: Object.assign({}, state.game, { description: action.value }),
         editError: action.value === ""
+      };
+    case CHANGED_RELEASED:
+      const stringifiedDate = moment(action.date).format("DD MMM YYYY");
+      return {
+        ...state,
+        game: Object.assign({}, state.game, { released: stringifiedDate }),
+        editError: action.date === ""
       };
     case CHANGED_RATING:
       return {
