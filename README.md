@@ -8,5 +8,5 @@ This site uses the asp.net core and Mongodb backend API at https://github.com/Ra
 
 This project uses connect redux router, axios and redux sagas.
 
-#Authors
+#Author
 Rachel Griffiths
