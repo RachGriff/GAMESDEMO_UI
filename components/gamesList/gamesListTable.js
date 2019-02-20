@@ -18,7 +18,7 @@ export const GamesListTable = ({ gamesList }) => {
         {gamesList.length <= 0 && (
           <tr className="NoGamesMsg">
             <td colSpan="3">
-              "There are no games available yet - why not add one?"
+              There are no games available yet - why not add one?
             </td>
           </tr>
         )}
