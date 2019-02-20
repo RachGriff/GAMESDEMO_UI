@@ -1,0 +1,26 @@
+[
+  {
+    "id": "5c6bef50f44c764c10020b8c",
+    "name": "Test Game One",
+    "released": "15 February 2018",
+    "rating": 4
+  },
+  {
+    "id": "5c6bef78f44c764c10020b8d",
+    "name": "Test Game Two",
+    "released": "05 January 2018",
+    "rating": 3
+  },
+  {
+    "id": "5c6bef92f44c764c10020b8e",
+    "name": "Test Game Three",
+    "released": "09 January 2018",
+    "rating": 4
+  },
+  {
+    "id": "5c6c62c27027ee4558444393",
+    "name": "Anthem",
+    "released": "22 February 2019",
+    "rating": 5
+  }
+]

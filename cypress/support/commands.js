@@ -23,3 +23,16 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+import { API_BASE_URL } from "../../utils/config";
+
+Cypress.Commands.add("callAPIRetrievingGames", (path = "/") => {
+  cy.server();
+  cy.route(API_BASE_URL, "fx:games.json");
+  cy.visit(path);
+});
+
+Cypress.Commands.add("callAPIRetrievingNoGames", (path = "/") => {
+  cy.server();
+  cy.route(API_BASE_URL, []);
+  cy.visit(path);
+});
