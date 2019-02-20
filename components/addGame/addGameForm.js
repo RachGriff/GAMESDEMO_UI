@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { AddSingleGameDetail } from "./addSingleGameDetail";
-
+import styles from "./addGame.css";
 export default class AddGameForm extends React.Component {
   componentDidMount() {
     this.props.onLoad();
@@ -21,7 +21,9 @@ export default class AddGameForm extends React.Component {
     } = this.props;
     return (
       <div>
-        <div>Add your new game!</div>
+        <div>
+          <h2>Add your new game!</h2>
+        </div>
         <AddSingleGameDetail
           game={game}
           onAddName={onAddName}

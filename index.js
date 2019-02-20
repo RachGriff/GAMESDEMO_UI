@@ -3,6 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/app";
 import GameDetails from "./components/gameDetails/gameDetailsContainer";
+import { Header } from "./shared/header/header";
 import AddGame from "./components/addGame/addGameContainer";
 import EditGameDetails from "./components/gameEdit/gameEditContainer";
 import createSagaMiddleware from "redux-saga";
@@ -28,12 +29,12 @@ sagas.run(rootSaga);
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <Switch>
+      <Header>
         <Route exact path="/" component={App} />
         <Route exact path="/addGame" component={AddGame} />
         <Route exact path="/gameDetails/:id" component={GameDetails} />
         <Route exact path="/gameDetails/:id/edit" component={EditGameDetails} />
-      </Switch>
+      </Header>
     </ConnectedRouter>
   </Provider>,
   document.getElementById("app")
