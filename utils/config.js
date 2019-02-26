@@ -1,1 +1,1 @@
-export const API_BASE_URL = `https://localhost:44356/api/games`;
+export const API_BASE_URL = `https://pure-ravine-54288.herokuapp.com/api/games`;
