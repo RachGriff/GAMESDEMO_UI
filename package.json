@@ -11,8 +11,7 @@
     "remove-public": "node_modules/.bin/rimraf ./public",
     "build:html": "babel-node tools/buildHtml.js",
     "prebuild": "npm-run-all clean-public build:html",
-    "build": "babel-node tools/build.js",
-    "postbuild": "babel-node tools/server.js"
+    "build": "babel-node tools/build.js"
   },
   "author": "Rachel Griffiths",
   "license": "ISC",
