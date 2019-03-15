@@ -1,18 +1,16 @@
 // webpack.config.prod.js
-const path = require('path')
-const webpack = require('webpack')
+const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: "source-map",
 
-  entry: [
-    './index.js'
-  ],
+  entry: ["./index.js"],
 
   output: {
-    path: path.join(__dirname, 'build'),
-    filename: 'bundle.js',
-    publicPath: '/build/'
+    path: path.join(__dirname, "public"),
+    filename: "bundle.js",
+    publicPath: "/public/"
   },
 
   plugins: [
@@ -24,8 +22,8 @@ module.exports = {
       }
     }),
     new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
+      "process.env": {
+        NODE_ENV: JSON.stringify("production")
       }
     })
   ],
@@ -46,4 +44,4 @@ module.exports = {
       }
     ]
   }
-}
+};
