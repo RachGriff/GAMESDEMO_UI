@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { AddLine } from "./AddLine";
-import { AddDate } from "./AddDate";
+import { AddLine } from "./addLine";
+import { AddDate } from "./addDate";
 
 export const AddSingleGameDetail = ({
   onAddName,
