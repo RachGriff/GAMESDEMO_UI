@@ -20,4 +20,5 @@ app.listen(port, function(err) {
     console.log(err);
   }
   console.log(`listening on port ${port}`);
+  open(`http://localhost:${port}`);
 });

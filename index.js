@@ -15,6 +15,7 @@ import { Provider } from "react-redux";
 import { Route, Switch } from "react-router"; // react-router v4
 import { createLogger } from "redux-logger";
 import rootSaga from "./sagas/rootSaga";
+import logo from "./shared/Images/logo.png";
 const sagas = createSagaMiddleware();
 
 export const history = createBrowserHistory();

@@ -11,7 +11,8 @@
     "remove-public": "node_modules/.bin/rimraf ./public",
     "build:html": "babel-node tools/buildHtml.js",
     "prebuild": "npm-run-all clean-public build:html",
-    "build": "babel-node tools/build.js"
+    "build": "babel-node tools/build.js",
+    "start-prod": "babel-node tools/server.js"
   },
   "author": "Rachel Griffiths",
   "license": "ISC",
@@ -24,6 +25,7 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^2.1.0",
     "cypress": "^3.1.5",
+    "file-loader": "^3.0.1",
     "mini-css-extract-plugin": "^0.5.0",
     "style-loader": "^0.23.1",
     "webpack": "^3.12.0",
